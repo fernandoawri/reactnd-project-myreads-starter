@@ -9,8 +9,7 @@ import './App.css'
 class BooksApp extends Component {
   state = {
     books: [],
-    searchResults: [],
-    updateStatus: ''
+    searchResults: []
   }
 
   componentDidMount() {
@@ -51,6 +50,7 @@ class BooksApp extends Component {
           this.componentDidMount()
           if(!book.shelf){
             alert(`'${book.title}' added successfully to your reads.`)
+            this.searchBooks("")
           } else {
             alert(`'${book.title}' updated successfully to shelf: ${shelf}`)
           }
@@ -77,6 +77,7 @@ class BooksApp extends Component {
             }}
             onChangeShelf={(book, shelf) => {
               this.onChangeShelf(book, shelf)
+              history.push('/')
             }}
           />
         )}/>
