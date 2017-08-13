@@ -44,6 +44,9 @@ class BookDetails extends Component {
             )}
           </div>
         </div>
+        <div className="open-search">
+          <Link to='/search' className='add-contact'>Add a book</Link>
+        </div>
       </div>
     )
   }
