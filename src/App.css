@@ -21,23 +21,6 @@ body, .app {
   color: white;
 }
 
-.list-no-books-title {
-  padding: 10px 0;
-  background: #e74c3c;
-  text-align: center;
-  font-weight: 400;
-  margin: 0;
-  color: white;
-}
-
-.list-no-mybooks-title {
-  font-weight: 400;
-  background: #3498db;
-  margin: 0;
-  color: white;
-  text-align: center;
-}
-
 .list-books-content {
   padding: 0 0 80px;
   flex: 1;

@@ -2,12 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 
 class MyBooks extends Component {
-  handleChange(event) {
-
-  }
-
   render(){
-    const { books, onChangeShelf } = this.props
+    const { books } = this.props
 
     let currentlyReading = books.filter((book) => book.shelf === 'currentlyReading')
     let wantToRead = books.filter((book) => book.shelf === 'wantToRead')
@@ -30,7 +26,7 @@ class MyBooks extends Component {
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${book.imageLinks.smallThumbnail}")` }}></div>
                           <div className="book-shelf-changer">
-                            <select value={book.shelf} onChange={(e) => onChangeShelf(book,e.target.value)}>
+                            <select>
                               <option value="none" disabled>Move to...</option>
                               <option value="currentlyReading">Currently Reading</option>
                               <option value="wantToRead">Want to Read</option>
@@ -46,9 +42,6 @@ class MyBooks extends Component {
                   ))}
                 </ol>
               </div>
-              {currentlyReading.length === 0 && (
-                <h4 className="list-no-mybooks-title">No books in this shelf</h4>
-              )}
             </div>
             <div className="bookshelf">
               <h2 className="bookshelf-title">Want to Read</h2>
@@ -60,7 +53,7 @@ class MyBooks extends Component {
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${book.imageLinks.smallThumbnail}")` }}></div>
                           <div className="book-shelf-changer">
-                            <select value={book.shelf} onChange={(e) => onChangeShelf(book,e.target.value)}>
+                            <select>
                               <option value="none" disabled>Move to...</option>
                               <option value="currentlyReading">Currently Reading</option>
                               <option value="wantToRead">Want to Read</option>
@@ -76,9 +69,6 @@ class MyBooks extends Component {
                   ))}
                 </ol>
               </div>
-              {wantToRead.length === 0 && (
-                <h4 className="list-no-mybooks-title">No books in this shelf</h4>
-              )}
             </div>
             <div className="bookshelf">
               <h2 className="bookshelf-title">Read</h2>
@@ -90,7 +80,7 @@ class MyBooks extends Component {
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${book.imageLinks.smallThumbnail}")` }}></div>
                           <div className="book-shelf-changer">
-                            <select value={book.shelf} onChange={(e) => onChangeShelf(book,e.target.value)}>
+                            <select>
                               <option value="none" disabled>Move to...</option>
                               <option value="currentlyReading">Currently Reading</option>
                               <option value="wantToRead">Want to Read</option>
@@ -106,9 +96,6 @@ class MyBooks extends Component {
                   ))}
                 </ol>
               </div>
-              {read.length === 0 && (
-                <h4 className="list-no-mybooks-title">No books in this shelf</h4>
-              )}
             </div>
           </div>
         </div>
