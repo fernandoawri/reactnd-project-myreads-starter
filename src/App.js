@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 import MyBooks from './MyBooks'
 import SearchBooks from './SearchBooks'
+import BookDetails from './BookDetails'
 import * as BooksAPI from './BooksAPI'
 import sortBy from 'sort-by'
 import './App.css'
@@ -9,7 +10,8 @@ import './App.css'
 class BooksApp extends Component {
   state = {
     books: [],
-    searchResults: []
+    searchResults: [],
+    currentBook: {}
   }
 
   componentDidMount() {
@@ -58,14 +60,24 @@ class BooksApp extends Component {
       })
   }
 
+  showBookDetails(book){
+    this.setState(state => ({
+      currentBook: book
+    }))
+  }
+
   render() {
     return (
       <div className="app">
-        <Route exact path='/' render={() => (
+        <Route exact path='/' render={({ history }) => (
           <MyBooks
             books={this.state.books}
             onChangeShelf={(book, shelf) => {
               this.onChangeShelf(book, shelf)
+            }}
+            showBookDetails={(book) => {
+              this.showBookDetails(book)
+              history.push('/book-details')
             }}
           />
         )}/>
@@ -79,6 +91,15 @@ class BooksApp extends Component {
               this.onChangeShelf(book, shelf)
               history.push('/')
             }}
+            showBookDetails={(book) => {
+              this.showBookDetails(book)
+              history.push('/book-details')
+            }}
+          />
+        )}/>
+        <Route path='/book-details' render={({ history }) => (
+          <BookDetails
+            book={this.state.currentBook}
           />
         )}/>
       </div>
