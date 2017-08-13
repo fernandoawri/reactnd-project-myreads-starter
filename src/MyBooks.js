@@ -14,7 +14,7 @@ class MyBooks extends Component {
           <div>
             <Books
               key="currentlyReading"
-              shelf="currentlyReading"
+              shelf="Currently Reading"
               books={books.filter((book) => book.shelf === 'currentlyReading')}
               onChangeShelf={(book, shelf) => {
                 this.props.onChangeShelf(book, shelf)
@@ -25,7 +25,7 @@ class MyBooks extends Component {
             />
             <Books
               key="wantToRead"
-              shelf="wantToRead"
+              shelf="Want to read"
               books={books.filter((book) => book.shelf === 'wantToRead')}
               onChangeShelf={(book, shelf) => {
                 this.props.onChangeShelf(book, shelf)
@@ -36,7 +36,7 @@ class MyBooks extends Component {
             />
             <Books
               key="read"
-              shelf="read"
+              shelf="Read"
               books={books.filter((book) => book.shelf === 'read')}
               onChangeShelf={(book, shelf) => {
                 this.props.onChangeShelf(book, shelf)
