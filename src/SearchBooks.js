@@ -26,6 +26,9 @@ class SearchBooks extends Component {
             onChangeShelf={(book, shelf) => {
               this.props.onChangeShelf(book, shelf)
             }}
+            showBookDetails={(book) => {
+              this.props.showBookDetails(book)
+            }}
           />
         </div>
       </div>

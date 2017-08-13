@@ -2,17 +2,17 @@ import React, { Component } from 'react'
 
 class Books extends Component {
   render(){
-    const { books, onChangeShelf, shelf } = this.props
+    const { books, onChangeShelf, shelf, showBookDetails } = this.props
     return(
       <div className="bookshelf">
         <h2 className="bookshelf-title">{shelf}</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
             {books.map((book) => (
-              <li key={book.id}>
+              <li key={book.id} >
                 <div className="book">
                   <div className="book-top">
-                    <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${book.imageLinks.smallThumbnail}")` }}></div>
+                    <div className="book-cover"  onClick={(e) => showBookDetails(book)} style={{ width: 128, height: 193, backgroundImage: `url("${book.imageLinks !== undefined? book.imageLinks.thumbnail:''}")` }}></div>
                     <div className="book-shelf-changer">
                       <select value={book.shelf} onChange={(e) => onChangeShelf(book,e.target.value)}>
                         <option value="none" disabled>Move to...</option>

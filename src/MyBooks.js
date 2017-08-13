@@ -19,6 +19,9 @@ class MyBooks extends Component {
               onChangeShelf={(book, shelf) => {
                 this.props.onChangeShelf(book, shelf)
               }}
+              showBookDetails={(book) => {
+                this.props.showBookDetails(book)
+              }}
             />
             <Books
               key="wantToRead"
@@ -27,6 +30,9 @@ class MyBooks extends Component {
               onChangeShelf={(book, shelf) => {
                 this.props.onChangeShelf(book, shelf)
               }}
+              showBookDetails={(book) => {
+                this.props.showBookDetails(book)
+              }}
             />
             <Books
               key="read"
@@ -34,6 +40,9 @@ class MyBooks extends Component {
               books={books.filter((book) => book.shelf === 'read')}
               onChangeShelf={(book, shelf) => {
                 this.props.onChangeShelf(book, shelf)
+              }}
+              showBookDetails={(book) => {
+                this.props.showBookDetails(book)
               }}
             />
           </div>
