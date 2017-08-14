@@ -28,3 +28,14 @@ The search page has a text input used to find books. As the value of the text in
 The application allows you to click on the cover of each book displayed in the Main page as well as the Search page displaying the book information.
 
 ## Demo
+### :video_camera: Video Walkthrough Main Page
+Here's a walkthrough of Main Page:
+<img src='http://i.imgur.com/U1JI2Iu.gif' title='Video Walkthrough Main Page' width='' alt='Video Walkthrough Main Page' />
+
+### :video_camera: Video Walkthrough Search Page
+Here's a walkthrough of Search Page:
+<img src='http://i.imgur.com/QilT0fQ.gif' title='Video Walkthrough Search Page' width='' alt='Video Walkthrough Search Page' />
+
+### :video_camera: Video Walkthrough Book Details Page
+Here's a walkthrough of Book Details Page:
+<img src='http://i.imgur.com/sghuqDJ.gif' title='Video Walkthrough Book Details Page' width='' alt='Video Walkthrough Book Details Page' />
