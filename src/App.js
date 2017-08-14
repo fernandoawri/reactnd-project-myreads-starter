@@ -69,7 +69,7 @@ class BooksApp extends Component {
   render() {
     return (
       <div className="app">
-        <Route exact path='/' render={({ history }) => (
+        <Route exact path="/" render={({ history }) => (
           <MyBooks
             books={this.state.books}
             onChangeShelf={(book, shelf) => {
@@ -81,7 +81,7 @@ class BooksApp extends Component {
             }}
           />
         )}/>
-        <Route path='/search' render={({ history }) => (
+        <Route path="/search" render={({ history }) => (
           <SearchBooks
             searchResults={this.state.searchResults}
             searchBooks={(query) => {
@@ -97,10 +97,8 @@ class BooksApp extends Component {
             }}
           />
         )}/>
-        <Route path='/book-details' render={({ history }) => (
-          <BookDetails
-            book={this.state.currentBook}
-          />
+        <Route path="/book-details" render={({ history }) => (
+          <BookDetails book={this.state.currentBook} />
         )}/>
       </div>
     )

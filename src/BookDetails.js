@@ -7,14 +7,9 @@ class BookDetails extends Component {
     return(
       <div className="list-books">
         <div className="search-books-bar">
-          <Link className="close-search" to='/'>Close</Link>
+          <Link className="close-search" to="/">Close</Link>
           <div className="search-books-input-wrapper">
-            <input
-              type="text"
-              value="Book Details"
-              className="book-details-top-title"
-              disabled
-            />
+            <input type="text" value="Book Details" className="book-details-top-title" disabled />
           </div>
         </div>
         <div className="list-books-content">
@@ -45,7 +40,7 @@ class BookDetails extends Component {
           </div>
         </div>
         <div className="open-search">
-          <Link to='/search' className='add-contact'>Add a book</Link>
+          <Link to="/search" className="add-contact">Add a book</Link>
         </div>
       </div>
     )
