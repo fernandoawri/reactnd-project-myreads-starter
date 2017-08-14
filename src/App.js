@@ -89,7 +89,6 @@ class BooksApp extends Component {
             }}
             onChangeShelf={(book, shelf) => {
               this.onChangeShelf(book, shelf)
-              history.push('/')
             }}
             showBookDetails={(book) => {
               this.showBookDetails(book)
