@@ -18,6 +18,7 @@ This repo is a code-along with the first project in the [React Nanodegree progra
 * install the serve if you don't have it - `npm install -g serve`
 * start the project - `serve -s build`
 * go to the url provided by serve - `Local: http://localhost:5000`
+
 ![alt text](https://media.giphy.com/media/3o6vY6TroRe4IOz0Lm/giphy.gif "Book Details Page")
 
 ## How to Navigate
