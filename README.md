@@ -37,7 +37,7 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 ## Demo
 ### :video_camera: Video Walkthrough Main Page
 Here's a walkthrough of Main Page:
-![Main Page](https://media.giphy.com/media/3oEhn3XH8Mw4jcQuw8/giphy.gif "Main Page")
+![Main Page](https://media.giphy.com/media/3oEhn3XH8Mw4jcQuw8/giphy.gif "Main-Page")
 
 ### :video_camera: Video Walkthrough Search Page
 Here's a walkthrough of Search Page:
