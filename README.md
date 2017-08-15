@@ -9,13 +9,15 @@ This repo is a code-along with the first project in the [React Nanodegree progra
 * clone the Project - `git clone https://github.com/fernandoawri/reactnd-project-myreads-starter`
 * install the dependencies - `npm install`
 * start the project - `npm start`
+![alt text](https://media.giphy.com/media/xT39DhtFUKEkpRMr3G/giphy.gif "Book Details Page")
 
 ### Run Prod Version
 * clone the Project - `git clone https://github.com/fernandoawri/reactnd-project-myreads-starter`
 * install the dependencies - `npm install`
 * install the serve if you don't have it - `npm install -g serve`
 * start the project - `serve -s build`
-* go to the url provided by serve - `Local: http://localhost:5000 `
+* go to the url provided by serve - `Local: http://localhost:5000`
+![alt text](https://media.giphy.com/media/3o6vY6TroRe4IOz0Lm/giphy.gif "Book Details Page")
 
 ## How to Navigate
 ### Main Page
@@ -27,15 +29,25 @@ The search page has a text input used to find books. As the value of the text in
 ### Book details
 The application allows you to click on the cover of each book displayed in the Main page as well as the Search page displaying the book information.
 
+### Important
+The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
+
 ## Demo
 ### :video_camera: Video Walkthrough Main Page
 Here's a walkthrough of Main Page:
-<img src='http://i.imgur.com/U1JI2Iu.gif' title='Video Walkthrough Main Page' width='' alt='Video Walkthrough Main Page' />
+![alt text](https://media.giphy.com/media/3oEhn3XH8Mw4jcQuw8/giphy.gif "Main Page")
 
 ### :video_camera: Video Walkthrough Search Page
 Here's a walkthrough of Search Page:
-<img src='http://i.imgur.com/QilT0fQ.gif' title='Video Walkthrough Search Page' width='' alt='Video Walkthrough Search Page' />
+![alt text](https://media.giphy.com/media/3oEhn8TMFOGgrMjR4I/giphy.gif "Search Page")
 
 ### :video_camera: Video Walkthrough Book Details Page
 Here's a walkthrough of Book Details Page:
-<img src='http://i.imgur.com/sghuqDJ.gif' title='Video Walkthrough Book Details Page' width='' alt='Video Walkthrough Book Details Page' />
+![alt text](https://media.giphy.com/media/xT39D8Mt9zxksDNg7C/giphy.gif "Book Details Page")
+
+## Contributing
+
+This repository is the starter code for _all_ Udacity students.
+But contact me and you can use this project as example for your future projects.
+
+For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
