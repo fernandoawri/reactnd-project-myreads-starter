@@ -14,7 +14,7 @@ class Books extends Component {
                   <div className="book-top">
                     <div className="book-cover"  onClick={(e) => showBookDetails(book)} style={{backgroundImage: `url("${book.imageLinks !== undefined? book.imageLinks.thumbnail:''}")` }}></div>
                     <div className="book-shelf-changer">
-                      <select value={book.shelf} onChange={(e) => onChangeShelf(book,e.target.value)}>
+                      <select value={book.shelf ? book.shelf: 'none'} onChange={(e) => onChangeShelf(book,e.target.value)}>
                         <option value="none" disabled>Move to...</option>
                         <option value="currentlyReading">Currently Reading</option>
                         <option value="wantToRead">Want to Read</option>
