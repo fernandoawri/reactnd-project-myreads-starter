@@ -9,6 +9,7 @@ This repo is a code-along with the first project in the [React Nanodegree progra
 * clone the Project - `git clone https://github.com/fernandoawri/reactnd-project-myreads-starter`
 * install the dependencies - `npm install`
 * start the project - `npm start`
+
 ![alt text](https://media.giphy.com/media/xT39DhtFUKEkpRMr3G/giphy.gif "Book Details Page")
 
 ### Run Prod Version
