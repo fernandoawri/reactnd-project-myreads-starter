@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom'
 
 class MyBooks extends Component {
   render(){
-    const { books } = this.props
+    const { books, onChangeShelf, showBookDetails } = this.props
+    const currentlyReading = books.filter(book => book.shelf === 'currentlyReading')
+    const wantToRead = books.filter(book => book.shelf === 'wantToRead')
+    const read = books.filter(book => book.shelf === 'read')
     return(
       <div className="list-books">
         <div className="list-books-title">
@@ -15,35 +18,23 @@ class MyBooks extends Component {
             <Books
               key="currentlyReading"
               shelf="Currently Reading"
-              books={books.filter((book) => book.shelf === 'currentlyReading')}
-              onChangeShelf={(book, shelf) => {
-                this.props.onChangeShelf(book, shelf)
-              }}
-              showBookDetails={(book) => {
-                this.props.showBookDetails(book)
-              }}
+              books={currentlyReading}
+              onChangeShelf={onChangeShelf}
+              showBookDetails={showBookDetails}
             />
             <Books
               key="wantToRead"
               shelf="Want to read"
-              books={books.filter((book) => book.shelf === 'wantToRead')}
-              onChangeShelf={(book, shelf) => {
-                this.props.onChangeShelf(book, shelf)
-              }}
-              showBookDetails={(book) => {
-                this.props.showBookDetails(book)
-              }}
+              books={wantToRead}
+              onChangeShelf={onChangeShelf}
+              showBookDetails={showBookDetails}
             />
             <Books
               key="read"
               shelf="Read"
-              books={books.filter((book) => book.shelf === 'read')}
-              onChangeShelf={(book, shelf) => {
-                this.props.onChangeShelf(book, shelf)
-              }}
-              showBookDetails={(book) => {
-                this.props.showBookDetails(book)
-              }}
+              books={read}
+              onChangeShelf={onChangeShelf}
+              showBookDetails={showBookDetails}
             />
           </div>
         </div>
