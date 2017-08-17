@@ -34,19 +34,20 @@ class BooksApp extends Component {
             searchResults: []
           }))
         } else {
+          for (let index = 0; index < searchResults.length; index++) {
+            for(const book of this.state.books){
+              if(book.title === searchResults[index].title){
+                searchResults[index].shelf = book.shelf
+              }
+            }
+          }
           searchResults.sort(sortBy('title'))
           this.setState(state => ({
-            searchResults: searchResults
+            searchResults: searchResults,
+            query: query
           }))
         }
       })
-      this.setState(state => ({
-        query: query
-      }))
-    } else {
-      this.setState(state => ({
-        searchResults: []
-      }))
     }
   }
 
@@ -73,37 +74,32 @@ class BooksApp extends Component {
   }
 
   render() {
+    const { books, searchResults, currentBook } = this.state;
     return (
       <div className="app">
         <Route exact path="/" render={({ history }) => (
             <MyBooks
-              books={this.state.books}
+              books={books}
               onChangeShelf={(book, shelf) => {
                 this.onChangeShelf(book, shelf)
               }}
-              showBookDetails={(book) => {
-                this.showBookDetails(book)
-                history.push('/book-details')
-              }}
+              showBookDetails={this.showBookDetails}
             />
         )}/>
         <Route path="/search" render={({ history }) => (
           <SearchBooks
-            searchResults={this.state.searchResults}
+            searchResults={searchResults}
             searchBooks={(query) => {
               this.searchBooks(query)
             }}
             onChangeShelf={(book, shelf) => {
               this.onChangeShelf(book, shelf)
             }}
-            showBookDetails={(book) => {
-              this.showBookDetails(book)
-              history.push('/book-details')
-            }}
+            showBookDetails={this.showBookDetails}
           />
         )}/>
         <Route path="/book-details" render={({ history }) => (
-          <BookDetails book={this.state.currentBook} />
+          <BookDetails book={currentBook} />
         )}/>
         <ToastContainer
           position="bottom-center"
