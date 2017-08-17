@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 class SearchBooks extends Component {
   render(){
-    const { searchResults, searchBooks } = this.props
+    const { searchResults, searchBooks, onChangeShelf, showBookDetails } = this.props
     return(
       <div className="search-books">
         <div className="search-books-bar">
@@ -23,12 +23,8 @@ class SearchBooks extends Component {
             key="search"
             shelf="Search results"
             books={searchResults}
-            onChangeShelf={(book, shelf) => {
-              this.props.onChangeShelf(book, shelf)
-            }}
-            showBookDetails={(book) => {
-              this.props.showBookDetails(book)
-            }}
+            onChangeShelf={onChangeShelf}
+            showBookDetails={showBookDetails}
           />
         </div>
       </div>
