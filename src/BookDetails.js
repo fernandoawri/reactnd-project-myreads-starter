@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import BookDetailed from './BookDetailed'
 import { Link } from 'react-router-dom'
 
-class BookDetails extends Component {
-  render(){
-    const { book } = this.props
+const BookDetails = (props) => {
+    const book = props.book
     return(
       <div className="list-books">
         <div className="search-books-bar">
@@ -21,7 +20,6 @@ class BookDetails extends Component {
         </div>
       </div>
     )
-  }
 }
 
 export default BookDetails
