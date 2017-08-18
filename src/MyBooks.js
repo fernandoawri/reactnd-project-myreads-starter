@@ -4,10 +4,7 @@ import { Link } from 'react-router-dom'
 
 class MyBooks extends Component {
   render(){
-    const { books, onChangeShelf, showBookDetails } = this.props
-    const currentlyReading = books.filter(book => book.shelf === 'currentlyReading')
-    const wantToRead = books.filter(book => book.shelf === 'wantToRead')
-    const read = books.filter(book => book.shelf === 'read')
+    const { currentlyReading, wantToRead, read, onChangeShelf, showBookDetails } = this.props
     return(
       <div className="list-books">
         <div className="list-books-title">
