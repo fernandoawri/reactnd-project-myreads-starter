@@ -76,9 +76,7 @@ class BooksApp extends Component {
   }
 
   removeBook(book){
-    let books = this.state.books
-    const index = books.indexOf(book)
-    books.splice(index, 1)
+    const books = this.state.books.filter(b => b.title !== book.title)
     this.setState(state => ({
       books: books
     }))
