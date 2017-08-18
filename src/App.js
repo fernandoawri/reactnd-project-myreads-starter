@@ -52,19 +52,21 @@ class BooksApp extends Component {
   }
 
   onChangeShelf(book, shelf){
+    if(book.shelf !== shelf){
       BooksAPI.update(book, shelf).then((books) => {
         if(!books || books.error){
           toast.error(`An error occurred while updating '${book.title}' to shelf: ${shelf}`)
         } else {
-          this.componentDidMount()
-          this.searchBooks(this.state.query)
-          if(!book.shelf){
-            toast(`'${book.title}' added successfully to your reads.`)
+          book.shelf = shelf
+          if(shelf === 'none'){
+            this.removeBook(book)
           } else {
-            toast(`'${book.title}' updated successfully to shelf: ${shelf}`)
+            this.addBook(book)
           }
+          toast(`'${book.title}' updated successfully to shelf: ${shelf}`)
         }
       })
+    }
   }
 
   showBookDetails(book){
@@ -73,13 +75,35 @@ class BooksApp extends Component {
     }))
   }
 
+  removeBook(book){
+    let books = this.state.books
+    const index = books.indexOf(book)
+    books.splice(index, 1)
+    this.setState(state => ({
+      books: books
+    }))
+  }
+
+  addBook(book){
+    const books = this.state.books.filter(b => b.title !== book.title).concat([ book ])
+    this.setState(state => ({
+      books: books
+    }))
+  }
+
   render() {
-    const { books, searchResults, currentBook } = this.state;
+    const { books, searchResults, currentBook } = this.state
+    const currentlyReading = books.filter(book => book.shelf === 'currentlyReading')
+    const wantToRead = books.filter(book => book.shelf === 'wantToRead')
+    const read = books.filter(book => book.shelf === 'read')
+
     return (
       <div className="app">
         <Route exact path="/" render={({ history }) => (
           <MyBooks
-            books={books}
+            currentlyReading={currentlyReading}
+            wantToRead={wantToRead}
+            read={read}
             onChangeShelf={(book, shelf) => {
               this.onChangeShelf(book, shelf)
             }}
