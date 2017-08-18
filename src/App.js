@@ -63,7 +63,6 @@ class BooksApp extends Component {
           } else {
             this.addBook(book)
           }
-          toast(`'${book.title}' updated successfully to shelf: ${shelf}`)
         }
       })
     }
@@ -80,6 +79,7 @@ class BooksApp extends Component {
     this.setState(state => ({
       books: books
     }))
+    toast.error(`Book '${book.title}' removed from your list`)
   }
 
   addBook(book){
@@ -87,6 +87,7 @@ class BooksApp extends Component {
     this.setState(state => ({
       books: books
     }))
+    toast(`'${book.title}' updated successfully to shelf: ${book.shelf}`)
   }
 
   render() {
